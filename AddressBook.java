@@ -1,9 +1,10 @@
 package com.bl.addressbook;
 /*
  * @Author: Rajesh
- * Creating different methods to add, edit and show the contact details.
+ * Creating different methods to add, edit, show and delete the contact details.
  */
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class AddressBook {
@@ -80,5 +81,18 @@ public class AddressBook {
             } else
                 System.out.println("Entered name not found in the AddressBook");
         }
-    }
+    }   
+    	//creating a deleteContacts() method to delete a contact specified by user.
+        public static void deleteContacts(String name) {
+        	Iterator<Contacts> itr = contact_Details.iterator();
+        	while(itr.hasNext()) {
+        		Contacts contact = itr.next();
+        		if(contact.getFirstName().equalsIgnoreCase(name)) {
+        			System.out.println("Entered name found in AddressBook");
+        			itr.remove();
+        		}else
+        			System.out.println("Entered name not found in AddressBook");
+        	}
+        
+        }
 }

@@ -15,7 +15,7 @@ public class AddressBookMain {
 		while(i != 0) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("================================");
-		System.out.println("Enter 1 to add contact\nEnter 2 to edit details of contacts\nEnter 3 for showing details of contacts\nEnter 4 to exit AddressBook");
+		System.out.println("Enter 1 to add contact\nEnter 2 to edit details of contacts\nEnter 3 for showing details of contacts\nEnter 4 to delete a contact\nEnter 5 to exit AddressBook");
 		int userChoice = sc.nextInt();
 		
 		switch (userChoice) {
@@ -26,11 +26,18 @@ public class AddressBookMain {
 			System.out.println("Enter the first name of the contact you want to edit");
 			String name = sc.next();
 			AddressBook.editContacts(name);
+			System.out.println("Contact edited successfully.");
 			break;
 		case 3 :
 			AddressBook.showContacts();
 			break;
 		case 4 :
+			System.out.println("Enter the first name of the contact you want to delete");
+			String deleteName = sc.next();
+			AddressBook.deleteContacts(deleteName);
+			System.out.println("Contact deleted successfully.");
+			break;
+		case 5 :
 			System.out.println("Thank You. Please come again.");
 			i = 0;
 			break;
