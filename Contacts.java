@@ -1,12 +1,12 @@
 package com.bl.addressbook;
 /*
  * @Author: Rajesh
- * Creating getter and setter methods for the variables.
+ * Creating the Contacts class to store all the variables.
  */
-public class Address {
+public class Contacts {
 	private String firstName, lastName, email, city, state;
 	private long phoneNumber, zip;
-	
+	//creating getter and setter methods for each variable
 	public String getFirstName() {
 		return firstName;
 	}
@@ -53,6 +53,18 @@ public class Address {
 	public String toString() {
 		return "Address [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", city=" + city
 				+ ", state=" + state + ", phoneNumber=" + phoneNumber + ", zip=" + zip + "]";
+	}
+	//creating a constructor to initialize the values.
+	public Contacts(String firstName, String lastName, String email, String city, String state, long phoneNumber,
+			long zip) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.city = city;
+		this.state = state;
+		this.phoneNumber = phoneNumber;
+		this.zip = zip;
 	}
 	
 }
