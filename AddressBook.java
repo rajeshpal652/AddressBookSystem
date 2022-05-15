@@ -78,12 +78,13 @@ public class AddressBook {
                 System.out.println("Enter the updated Phone Number");
                 int phoneNumber = sc.nextInt();
                 contact.setPhoneNumber(phoneNumber);
-            } else
+            } else {
                 System.out.println("Entered name not found in the AddressBook");
+            }
         }
     }   
-    	//creating a deleteContacts() method to delete a contact specified by user.
-        public static void deleteContacts(String name) {
+    	//creating a deleteContact() method to delete a contact specified by user.
+        public static void deleteContact(String name) {
         	Iterator<Contacts> itr = contact_Details.iterator();
         	while(itr.hasNext()) {
         		Contacts contact = itr.next();
